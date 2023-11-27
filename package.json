@@ -1,0 +1,71 @@
+{
+  "name": "blockoli-hardware-public",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "SET \"NODE_ENV=develop\" &&electron .",
+    "publish": "SET \"NODE_ENV=production\" && electron-builder --win -p always"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-bp/blockoli-hardware-public.git"
+  },
+  "author": {
+    "url": "https://pf.kakao.com/_CBvNxb/chat",
+    "name": "BP LAB",
+    "email": "bpcode@naver.com"
+  },
+  "contributes": {
+    "name": "Hwang bomee",
+    "email": "hwangbomee@kakao.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-bp/blockoli-hardware-public/issues"
+  },
+  "homepage": "https://github.com/team-bp/blockoli-hardware-public#readme",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "electron": "^27.0.2",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "@sentry/electron": "^4.14.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "serialport": "^12.0.0",
+    "socket.io": "^4.7.2",
+    "tableify": "^1.1.1",
+    "websocket": "^1.0.34"
+  },
+  "build": {
+    "productName": "Blockoli-Hardware",
+    "appId": "com.github.team-bp.blockoli-hardware-public",
+    "asar": false,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "team-bp",
+        "repo": "blockoli-hardware-public"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "./assets/favicon.ico"
+    },
+    "nsis": {
+      "createDesktopShortcut": "always",
+      "oneClick": true,
+      "perMachine": true,
+      "include": "./installer.nsh"
+    },
+    "directories": {
+      "output": "./dist/"
+    },
+    "files": [
+      "!.vscode${/*}"
+    ]
+  }
+}
