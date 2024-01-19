@@ -47,6 +47,12 @@
     "productName": "Blockoli-Hardware",
     "appId": "com.github.team-bp.blockoli-hardware-public",
     "asar": false,
+    "protocols": {
+      "name": "blockoli-hardware",
+      "schemes": [
+        "blockoli-hardware"
+      ]
+    },
     "publish": [
       {
         "provider": "github",
@@ -63,7 +69,7 @@
       "createDesktopShortcut": "always",
       "oneClick": true,
       "perMachine": true,
-      "include": "./installer.nsh"
+      "include": "installer.nsh"
     },
     "directories": {
       "output": "./dist/"
